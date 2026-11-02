@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e7">
+  <meta name="description" content="Заумь затрапезная. Место для прекрасной ерунды и одной очень голодной змейки.">
+  <title>Заумь затрапезная</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <a class="wordmark" href="./" aria-label="Заумь затрапезная — главная">зз<span>✳</span></a>
+      <span class="masthead-note">Личный уголок прекрасной ерунды</span>
+      <span class="edition">Выпуск № 001</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="site-title">
+        <div class="eyebrow"><span class="status-dot"></span> Здесь можно просто побыть</div>
+        <h1 id="site-title">Заумь<br><span class="title-second">затрапезная<span class="title-dot">.</span></span></h1>
+        <div class="hero-bottom">
+          <p class="intro">Мысли — сложные.<br>Удовольствия — простые.</p>
+          <p class="aside-note">Убедительного объяснения,<br>зачем существует этот сайт,<br>пока не поступило.</p>
+        </div>
+      </section>
+
+      <section class="game-card" aria-labelledby="game-card-title">
+        <div class="game-copy">
+          <span class="eyebrow">На повестке дня</span>
+          <h2 id="game-card-title">Подкормить<br>внутреннюю змейку.</h2>
+          <p>Собирай яблоки. Становись длиннее.<br>Старайся не встретиться с собой.</p>
+          <button class="play-button" id="open-game" type="button" aria-haspopup="dialog">
+            Играть в змейку <span aria-hidden="true">↗</span>
+          </button>
+          <span class="game-caption">Без великой цели. Ради маленького «ещё раз».</span>
+        </div>
+        <div class="snake-art" aria-hidden="true">
+          <span class="art-caption">Осторожно: растёт над собой</span>
+          <svg class="snake-illustration" viewBox="0 0 440 300" fill="none">
+            <path class="snake-shadow" d="M60 230H195Q225 230 225 200V95Q225 65 255 65H315Q345 65 345 95V140Q345 170 315 170H135Q105 170 105 140V110"/>
+            <path class="snake-body" d="M60 220H185Q215 220 215 190V85Q215 55 245 55H305Q335 55 335 85V130Q335 160 305 160H125Q95 160 95 130V100"/>
+            <rect x="69" y="61" width="52" height="67" rx="20" fill="#272424"/>
+            <circle cx="83" cy="77" r="5" fill="#ddf672"/><circle cx="107" cy="77" r="5" fill="#ddf672"/>
+            <path d="M95 62V45M95 45L87 37M95 45L103 37" stroke="#7a58bd" stroke-width="5" stroke-linecap="round"/>
+            <path d="M368 225C354 207 326 221 336 244C344 264 355 268 366 261C379 268 390 257 393 243C397 225 380 214 368 225Z" fill="#7a58bd"/>
+            <path d="M367 224Q364 211 374 205" stroke="#272424" stroke-width="4" stroke-linecap="round"/>
+            <path d="M383 61V81M373 71H393" stroke="#7a58bd" stroke-width="3"/>
+            <circle cx="45" cy="151" r="5" fill="#7a58bd"/>
+          </svg>
+          <span class="art-label">змейка обыкновенная<br><i>serpens procrastinatus</i></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Заумь затрапезная © <span id="year">2026</span></span>
+      <span>Серьёзность покинула чат <span aria-hidden="true">↙</span></span>
+    </footer>
+  </div>
+
+  <dialog id="game-dialog" aria-labelledby="game-title" aria-describedby="game-instructions">
+    <div class="game-shell">
+      <header class="game-header">
+        <div><span class="eyebrow">Перерыв на важное</span><h2 id="game-title">Змейка затрапезная</h2></div>
+        <button class="icon-button" id="close-game" type="button" aria-label="Закрыть игру">×</button>
+      </header>
+      <div class="scorebar">
+        <div>Яблоки <output id="score" aria-live="polite">0</output></div>
+        <div>Рекорд <output id="best-score">0</output></div>
+        <span id="game-status" role="status">Приятного аппетита!</span>
+      </div>
+      <div class="board-wrap">
+        <canvas id="board" width="576" height="576" tabindex="0" aria-label="Игровое поле змейки" aria-describedby="game-instructions">Для игры нужен браузер с поддержкой Canvas.</canvas>
+        <div class="board-overlay" id="board-overlay" hidden>
+          <span class="overlay-symbol" aria-hidden="true">✳</span>
+          <h3 id="overlay-title">Пауза</h3>
+          <p id="overlay-message">Яблоко никуда не убежит.</p>
+          <button class="play-button" id="overlay-action" type="button">Продолжить <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+      <div class="game-actions">
+        <button class="secondary-button" id="pause-game" type="button">Пауза</button>
+        <button class="secondary-button" id="restart-game" type="button">Заново ↻</button>
+      </div>
+      <p id="game-instructions" class="instructions">Стрелки или WASD — движение · Пробел — пауза · Esc — закрыть.<br>На телефоне — свайпы по полю или кнопки ниже.</p>
+      <div class="direction-pad" role="group" aria-label="Управление змейкой">
+        <button type="button" data-direction="up" aria-label="Вверх">↑</button>
+        <button type="button" data-direction="left" aria-label="Влево">←</button>
+        <button type="button" data-direction="down" aria-label="Вниз">↓</button>
+        <button type="button" data-direction="right" aria-label="Вправо">→</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
