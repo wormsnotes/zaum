@@ -148,7 +148,7 @@
     frame = null;
     if (state !== "running") return;
     if (!lastStep) lastStep = timestamp;
-    if (timestamp - lastStep >= Math.max(75, 155 - score * 3)) {
+    if (timestamp - lastStep >= Math.max(75, 155 - score * 3) * 1.5) {
       lastStep = timestamp;
       step();
     }
