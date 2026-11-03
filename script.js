@@ -18,8 +18,8 @@
   const STORAGE_KEY = "zaum-snake-best";
   const theme = getComputedStyle(document.documentElement);
   const colors = {
-    field: theme.getPropertyValue("--green").trim(),
-    grid: "#8c69a814",
+    field: theme.getPropertyValue("--pink").trim(),
+    grid: "#2724240d",
     fruit: theme.getPropertyValue("--purple").trim(),
     head: theme.getPropertyValue("--snake").trim(),
     body: theme.getPropertyValue("--snake-body").trim(),
