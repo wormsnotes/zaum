@@ -24,16 +24,14 @@ button:disabled { cursor: default; opacity: .45; }
 .masthead { display: flex; align-items: center; gap: 27px; min-height: 100px; border-bottom: 1px solid var(--ink); }
 .wordmark { color: var(--ink); text-decoration: none; font: italic bold 39px Georgia, serif; letter-spacing: -5px; }
 .wordmark span { color: var(--purple); font: 24px "Segoe UI", sans-serif; margin-left: 10px; }
-.masthead-note, .edition { font-size: 12px; }
+.edition { font-size: 12px; }
 .edition { margin-left: auto; text-transform: uppercase; letter-spacing: .1em; }
 .hero { padding: 61px 0 43px; }
 .eyebrow { display: block; font-size: 11px; line-height: 1.5; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
-.status-dot { display: inline-block; width: 7px; height: 7px; background: var(--purple); border-radius: 50%; margin-right: 9px; vertical-align: 1px; }
 h1 { margin: 27px 0 31px; font: normal clamp(66px, 9.8vw, 128px)/.99 Georgia, "Times New Roman", serif; letter-spacing: -.055em; }
 .title-second { font-style: italic; }
 .title-dot { color: var(--purple); }
-.hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
-.intro { margin: 0; font-size: 19px; line-height: 1.5; letter-spacing: -.025em; }
+.hero-bottom { display: flex; align-items: flex-end; justify-content: flex-end; gap: 20px; }
 .aside-note { margin: 0 6px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
 .game-card { display: grid; grid-template-columns: 1.1fr 1fr; border: 1px solid var(--ink); margin: 0 0 44px; min-height: 370px; }
 .game-copy { padding: 36px 39px; }
@@ -43,7 +41,6 @@ h1 { margin: 27px 0 31px; font: normal clamp(66px, 9.8vw, 128px)/.99 Georgia, "T
 .play-button span { color: var(--green); font-size: 22px; line-height: 1; }
 .play-button:hover { background: #46403e; transform: translateY(-2px); }
 .play-button:active { transform: translateY(0); }
-.game-caption { display: block; margin-top: 13px; color: var(--muted); font-size: 10px; }
 .snake-art { display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; min-width: 0; padding: 28px; background-color: var(--green); background-image: linear-gradient(#2724240a 1px, transparent 1px), linear-gradient(90deg, #2724240a 1px, transparent 1px); background-size: 28px 28px; border-left: 1px solid var(--ink); }
 .art-caption { align-self: flex-end; padding: 7px 11px; border: 1px solid var(--ink); border-radius: 100%; font-size: 10px; transform: rotate(7deg); }
 .snake-illustration { width: 100%; max-height: 260px; overflow: visible; }
@@ -52,7 +49,6 @@ h1 { margin: 27px 0 31px; font: normal clamp(66px, 9.8vw, 128px)/.99 Georgia, "T
 .art-label { align-self: flex-end; margin-top: -10px; font-size: 10px; line-height: 1.5; }
 .art-label i { color: #4e5734; }
 .footer { display: flex; justify-content: space-between; gap: 20px; padding: 21px 0 27px; border-top: 1px solid var(--ink); font-size: 10px; color: var(--muted); }
-.footer span span[aria-hidden] { color: var(--purple); font-size: 17px; margin-left: 9px; }
 
 dialog { width: min(100% - 32px, 620px); max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 1px solid var(--ink); color: var(--ink); background: var(--paper); box-shadow: 12px 12px 0 #27242430; overscroll-behavior: contain; }
 dialog::backdrop { background: #272424b8; backdrop-filter: blur(5px); }
@@ -88,12 +84,9 @@ canvas { display: block; width: 100%; height: auto; aspect-ratio: 1; touch-actio
 @media (max-width: 700px) {
   .page { padding: 0 23px; }
   .masthead { min-height: 78px; gap: 18px; }
-  .masthead-note { max-width: 145px; font-size: 10px; line-height: 1.5; }
   .edition { font-size: 9px; }
   .hero { padding: 42px 0 32px; }
   h1 { font-size: clamp(48px, 11vw, 78px); margin: 25px 0 28px; }
-  .hero .eyebrow { font-size: 9px; }
-  .intro { font-size: 16px; }
   .aside-note { font-size: 10px; }
   .game-card { grid-template-columns: 1fr; margin-bottom: 30px; }
   .game-copy { padding: 29px; }
@@ -105,7 +98,6 @@ canvas { display: block; width: 100%; height: auto; aspect-ratio: 1; touch-actio
 @media (max-width: 390px) {
   .page { padding: 0 17px; }
   .edition { display: none; }
-  .masthead-note { max-width: none; }
   .hero-bottom { align-items: flex-start; }
   .aside-note { max-width: 125px; }
   .game-copy { padding: 24px; }
