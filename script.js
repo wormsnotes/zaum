@@ -36,7 +36,6 @@
   let lastStep = 0;
   let touchStart = null;
 
-  document.querySelector("#year").textContent = new Date().getFullYear();
   try {
     const saved = Number(localStorage.getItem(STORAGE_KEY));
     if (Number.isInteger(saved) && saved > 0 && saved <= SIZE * SIZE - 3) best = saved;

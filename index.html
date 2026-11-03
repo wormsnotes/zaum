@@ -4,30 +4,78 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3f0e7">
-  <meta name="description" content="Заумь. Место для прекрасной ерунды и одной очень голодной змейки.">
-  <title>Заумь</title>
+  <meta name="description" content="Заумь — онлайн-газета. Главные материалы, город, культура и наука. И змейка на перерыв.">
+  <title>Заумь — онлайн-газета</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">К содержанию</a>
   <div class="page">
-    <header class="masthead">
-      <a class="wordmark" href="./" aria-label="Заумь — главная">з<span>✳</span></a>
-      <span class="edition">Выпуск № 001</span>
+    <header class="newspaper-header">
+      <div class="edition-line"><span>Онлайн-газета</span><span>Выпуск № 001</span><time datetime="2026-11-03">3 ноября 2026</time></div>
+      <div class="nameplate-row">
+        <span class="header-side">Город<br>Культура<br>Наука</span>
+        <h1 class="nameplate"><a href="index.html" aria-label="Заумь — главная">Заумь<span>.</span></a></h1>
+        <span class="header-symbol" aria-hidden="true">✳</span>
+      </div>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <div class="nav-pages"><a href="index.html" aria-current="page">Главная</a><a href="news.html">Новости</a></div>
+        <a class="nav-game" href="#game-card">На перерыв <span aria-hidden="true">↘</span></a>
+      </nav>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="site-title">
-        <h1 id="site-title">Заумь<span class="title-dot">.</span></h1>
-        <div class="hero-bottom">
-          <p class="aside-note">Убедительного объяснения,<br>зачем существует этот сайт,<br>пока не поступило.</p>
+    <main id="main">
+      <div class="issue-note"><span class="issue-marker" aria-hidden="true"></span> Пилотный выпуск <span class="note-separator" aria-hidden="true">/</span> <span>Демонстрационные материалы</span></div>
+
+      <section class="front-page" aria-labelledby="front-title">
+        <div class="section-heading"><h2 id="front-title">На первой полосе</h2><a class="text-link" href="news.html">Все новости <span aria-hidden="true">↗</span></a></div>
+        <article class="lead-story">
+          <div class="lead-copy">
+            <div class="article-meta"><a href="news.html?topic=culture">Культура</a><span>Первый выпуск</span></div>
+            <h3><a href="news.html#first-issue">У каждой истории теперь есть своя полоса</a></h3>
+            <p>«Заумь» становится газетой. Здесь найдётся место большим вопросам, маленьким наблюдениям и новостям, к которым хочется вернуться.</p>
+            <a class="read-link" href="news.html#first-issue">Читать материал <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="lead-art">
+            <svg viewBox="0 0 520 340" role="img" aria-labelledby="cover-title">
+              <title id="cover-title">Газетный лист «Заумь» на фоне фиолетового солнца</title>
+              <circle cx="365" cy="133" r="93" fill="#7a58bd"/>
+              <path d="M30 286H490M30 302H490" stroke="#272424" stroke-width="1" opacity=".25"/>
+              <g transform="translate(100 39) rotate(-9 145 130)">
+                <path d="M13 13H302V275H13Z" fill="#272424" opacity=".16"/>
+                <path d="M0 0H289V262H0Z" fill="#f3f0e7" stroke="#272424" stroke-width="2"/>
+                <text x="23" y="79" fill="#272424" font-family="Georgia,serif" font-size="66" letter-spacing="-4">Заумь<tspan fill="#7a58bd">.</tspan></text>
+                <path d="M23 99H265M23 106H265" stroke="#272424"/>
+                <path d="M23 125H148V228H23Z" fill="#ddf672"/>
+                <path d="M41 205L71 167L94 188L119 151L136 205Z" fill="#7a58bd"/>
+                <circle cx="53" cy="145" r="9" fill="#272424"/>
+                <path d="M165 126H265M165 136H265M165 146H244M165 168H265M165 178H265M165 188H253M165 210H265M165 220H247M23 242H265" stroke="#272424" stroke-width="3"/>
+              </g>
+              <path d="M429 242V276M412 259H446" stroke="#272424" stroke-width="3"/>
+            </svg>
+            <figcaption>Начинаем с чистого листа. Почти.</figcaption>
+          </figure>
+        </article>
+
+        <div class="headlines-grid">
+          <article class="headline-item"><div class="article-meta"><a href="news.html?topic=city">Город</a><span>Наблюдения</span></div><h3><a href="news.html#new-route">Маршрут выходного: свернуть на незнакомую улицу</a></h3><p>Небольшая прогулка, для которой не нужен большой план.</p><a class="text-link" href="news.html#new-route">Читать <span aria-hidden="true">↗</span></a></article>
+          <article class="headline-item"><div class="article-meta"><a href="news.html?topic=science">Наука</a><span>Вопрос недели</span></div><h3><a href="news.html#slow-noticing">Что мы замечаем, когда замедляемся?</a></h3><p>Предлагаем маленький эксперимент с привычным днём.</p><a class="text-link" href="news.html#slow-noticing">Читать <span aria-hidden="true">↗</span></a></article>
+          <article class="headline-item"><div class="article-meta"><a href="news.html?topic=culture">Культура</a><span>Личный опыт</span></div><h3><a href="news.html#five-pages">Пять страниц перед сном вместо бесконечной ленты</a></h3><p>Читательская привычка без списков обязательной литературы.</p><a class="text-link" href="news.html#five-pages">Читать <span aria-hidden="true">↗</span></a></article>
         </div>
       </section>
 
-      <section class="game-card" aria-labelledby="game-card-title">
+      <section class="rubrics" aria-labelledby="rubrics-title">
+        <div><span class="eyebrow">Выберите свою полосу</span><h2 id="rubrics-title">По темам</h2></div>
+        <div class="rubric-links"><a href="news.html?topic=city">Город <span aria-hidden="true">↗</span></a><a href="news.html?topic=culture">Культура <span aria-hidden="true">↗</span></a><a href="news.html?topic=science">Наука <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <div class="section-heading game-section-heading"><h2>Между строк</h2><span class="section-note">Небольшой перерыв на игру</span></div>
+      <section class="game-card" id="game-card" aria-labelledby="game-card-title">
         <div class="game-copy">
-          <span class="eyebrow">На повестке дня</span>
+          <span class="eyebrow">Игровая полоса</span>
           <h2 id="game-card-title">Подкормить<br>внутреннюю змейку.</h2>
           <p>Собирай яблоки. Становись длиннее.<br>Старайся не встретиться с собой.</p>
           <button class="play-button" id="open-game" type="button" aria-haspopup="dialog">
@@ -53,7 +101,8 @@
     </main>
 
     <footer class="footer">
-      <span>Заумь © <span id="year">2026</span></span>
+      <span>Заумь © <span data-year>2026</span></span>
+      <nav aria-label="Навигация в подвале"><a href="index.html" aria-current="page">Главная</a><a href="news.html">Новости</a></nav>
     </footer>
   </div>
 
