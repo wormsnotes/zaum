@@ -29,7 +29,6 @@ button:disabled { cursor: default; opacity: .45; }
 .hero { padding: 61px 0 43px; }
 .eyebrow { display: block; font-size: 11px; line-height: 1.5; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
 h1 { margin: 27px 0 31px; font: normal clamp(66px, 9.8vw, 128px)/.99 Georgia, "Times New Roman", serif; letter-spacing: -.055em; }
-.title-second { font-style: italic; }
 .title-dot { color: var(--purple); }
 .hero-bottom { display: flex; align-items: flex-end; justify-content: flex-end; gap: 20px; }
 .aside-note { margin: 0 6px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
