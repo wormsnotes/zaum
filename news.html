@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fffafc">
-  <meta name="description" content="Новости газеты «Заумь»: город, культура и наука. Все материалы первого выпуска.">
+  <meta name="theme-color" content="#fffdf7">
+  <meta name="description" content="Новости газеты «Заумь»: культура и наука. Все материалы первого выпуска.">
   <title>Новости — Заумь</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
@@ -16,7 +16,7 @@
     <header class="newspaper-header">
       <div class="edition-line"><span>Онлайн-газета</span><span>Выпуск № 001</span><time datetime="2026-11-03">3 ноября 2026</time></div>
       <div class="nameplate-row">
-        <span class="header-side">Город<br>Культура<br>Наука</span>
+        <span class="header-side">Культура<br>Наука</span>
         <a class="nameplate" href="index.html" aria-label="Заумь — главная">Заумь<span>.</span></a>
         <span class="header-symbol" aria-hidden="true">✳</span>
       </div>
@@ -28,11 +28,10 @@
 
     <main id="main">
       <div class="issue-note"><span class="issue-marker" aria-hidden="true"></span> Пилотный выпуск <span class="note-separator" aria-hidden="true">/</span> <span>Демонстрационный материал</span></div>
-      <header class="news-heading"><span class="eyebrow">Новостная полоса</span><h1>Новости<span class="title-dot">.</span></h1><p>Город, культура, наука — выбирайте, с чего начать.</p></header>
+      <header class="news-heading"><span class="eyebrow">Новостная полоса</span><h1>Новости<span class="title-dot">.</span></h1><p>Культура и наука — выбирайте, с чего начать.</p></header>
 
       <div class="news-filters" role="group" aria-label="Выбрать тему новостей" hidden>
         <button type="button" data-topic="all" aria-pressed="true" aria-controls="news-feed">Все темы <span>1</span></button>
-        <button type="button" data-topic="city" aria-pressed="false" aria-controls="news-feed">Город <span>0</span></button>
         <button type="button" data-topic="culture" aria-pressed="false" aria-controls="news-feed">Культура <span>1</span></button>
         <button type="button" data-topic="science" aria-pressed="false" aria-controls="news-feed">Наука <span>0</span></button>
       </div>
@@ -44,7 +43,7 @@
           <!-- Новый материал: скопируйте блок details, задайте уникальный id и data-article-topic. -->
           <details class="news-article" id="first-issue" data-article-topic="culture">
             <summary><span class="article-meta"><span class="topic-label">Культура</span><time datetime="2026-11-03">3 ноября 2026</time></span><h3>У каждой истории теперь есть своя полоса</h3><span class="article-summary">«Заумь» становится газетой. Рассказываем, как устроен первый выпуск.</span><span class="article-toggle">Читать материал <span aria-hidden="true">↗</span></span></summary>
-            <div class="article-body"><p>У «Зауми» появилась первая полоса. Теперь на главной странице собраны основные материалы, а в разделе «Новости» можно выбрать свою тему и спокойно прочитать статью целиком.</p><p>Начинаем с трёх рубрик: город, культура и наука. Нас интересуют привычные места, книги и вопросы, у которых не всегда бывает короткий ответ.</p><p>Этот выпуск демонстрационный: материалы показывают, как будет выглядеть издание. Дальше на их месте появятся настоящие новости и авторские тексты.</p><p>А змейка остаётся на главной. У хорошей газеты должна быть страница, на которой можно ненадолго отвлечься.</p><span class="article-byline">Редакция «Зауми» · Демонстрационный материал</span></div>
+            <div class="article-body"><p>У «Зауми» появилась первая полоса. Теперь на главной странице собраны основные материалы, а в разделе «Новости» можно выбрать свою тему и спокойно прочитать статью целиком.</p><p>Начинаем с двух рубрик: культура и наука. Нас интересуют книги, идеи и вопросы, у которых не всегда бывает короткий ответ.</p><p>Этот выпуск демонстрационный: материалы показывают, как будет выглядеть издание. Дальше на их месте появятся настоящие новости и авторские тексты.</p><p>А змейка остаётся на главной. У хорошей газеты должна быть страница, на которой можно ненадолго отвлечься.</p><span class="article-byline">Редакция «Зауми» · Демонстрационный материал</span></div>
           </details>
           <p class="news-empty" id="news-empty" hidden>В этой рубрике пока нет материалов. Загляните чуть позже или выберите другую тему.</p>
         </section>

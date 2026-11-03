@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fffafc">
-  <meta name="description" content="Заумь — онлайн-газета. Главные материалы, город, культура и наука. И змейка на перерыв.">
+  <meta name="theme-color" content="#fffdf7">
+  <meta name="description" content="Заумь — онлайн-газета. Главные материалы, культура и наука. И змейка на перерыв.">
   <title>Заумь — онлайн-газета</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
@@ -17,7 +17,7 @@
     <header class="newspaper-header">
       <div class="edition-line"><span>Онлайн-газета</span><span>Выпуск № 001</span><time datetime="2026-11-03">3 ноября 2026</time></div>
       <div class="nameplate-row">
-        <span class="header-side">Город<br>Культура<br>Наука</span>
+        <span class="header-side">Культура<br>Наука</span>
         <h1 class="nameplate"><a href="index.html" aria-label="Заумь — главная">Заумь<span>.</span></a></h1>
         <span class="header-symbol" aria-hidden="true">✳</span>
       </div>
@@ -42,19 +42,19 @@
           <figure class="lead-art">
             <svg viewBox="0 0 520 340" role="img" aria-labelledby="cover-title">
               <title id="cover-title">Газетный лист «Заумь» на фоне фиолетового солнца</title>
-              <circle cx="365" cy="133" r="93" fill="#bba0d8"/>
-              <path d="M30 286H490M30 302H490" stroke="#514064" stroke-width="1" opacity=".25"/>
+              <circle cx="365" cy="133" r="93" fill="var(--purple)"/>
+              <path d="M30 286H490M30 302H490" stroke="var(--ink)" stroke-width="1" opacity=".25"/>
               <g transform="translate(100 39) rotate(-9 145 130)">
-                <path d="M13 13H302V275H13Z" fill="#514064" opacity=".16"/>
-                <path d="M0 0H289V262H0Z" fill="#fffafc" stroke="#514064" stroke-width="2"/>
-                <text x="23" y="79" fill="#514064" font-family="Georgia,serif" font-size="66" letter-spacing="-4">Заумь<tspan fill="#bba0d8">.</tspan></text>
-                <path d="M23 99H265M23 106H265" stroke="#514064"/>
+                <path d="M13 13H302V275H13Z" fill="var(--ink)" opacity=".16"/>
+                <path d="M0 0H289V262H0Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+                <text x="23" y="79" fill="var(--ink)" font-family="Georgia,serif" font-size="66" letter-spacing="-4">Заумь<tspan fill="var(--purple)">.</tspan></text>
+                <path d="M23 99H265M23 106H265" stroke="var(--ink)"/>
                 <path d="M23 125H148V228H23Z" fill="var(--blue)"/>
                 <path d="M41 205L71 167L94 188L119 151L136 205Z" fill="var(--pink)"/>
-                <circle cx="53" cy="145" r="9" fill="#514064"/>
-                <path d="M165 126H265M165 136H265M165 146H244M165 168H265M165 178H265M165 188H253M165 210H265M165 220H247M23 242H265" stroke="#514064" stroke-width="3"/>
+                <circle cx="53" cy="145" r="9" fill="var(--ink)"/>
+                <path d="M165 126H265M165 136H265M165 146H244M165 168H265M165 178H265M165 188H253M165 210H265M165 220H247M23 242H265" stroke="var(--ink)" stroke-width="3"/>
               </g>
-              <path d="M429 242V276M412 259H446" stroke="#514064" stroke-width="3"/>
+              <path d="M429 242V276M412 259H446" stroke="var(--ink)" stroke-width="3"/>
             </svg>
             <figcaption>Начинаем с чистого листа. Почти.</figcaption>
           </figure>
@@ -64,7 +64,7 @@
 
       <section class="rubrics" aria-labelledby="rubrics-title">
         <div><span class="eyebrow">Выберите свою полосу</span><h2 id="rubrics-title">По темам</h2></div>
-        <div class="rubric-links"><a href="news.html?topic=city">Город <span aria-hidden="true">↗</span></a><a href="news.html?topic=culture">Культура <span aria-hidden="true">↗</span></a><a href="news.html?topic=science">Наука <span aria-hidden="true">↗</span></a></div>
+        <div class="rubric-links"><a href="news.html?topic=culture">Культура <span aria-hidden="true">↗</span></a><a href="news.html?topic=science">Наука <span aria-hidden="true">↗</span></a></div>
       </section>
 
       <div class="section-heading game-section-heading"><h2>Между строк</h2><span class="section-note">Небольшой перерыв на игру</span></div>
@@ -84,11 +84,11 @@
             <path class="snake-body" d="M60 220H185Q215 220 215 190V85Q215 55 245 55H305Q335 55 335 85V130Q335 160 305 160H125Q95 160 95 130V100"/>
             <rect x="69" y="61" width="52" height="67" rx="20" fill="var(--snake)"/>
             <circle cx="83" cy="77" r="5" fill="var(--yellow)"/><circle cx="107" cy="77" r="5" fill="var(--yellow)"/>
-            <path d="M95 62V45M95 45L87 37M95 45L103 37" stroke="#bba0d8" stroke-width="5" stroke-linecap="round"/>
-            <path d="M368 225C354 207 326 221 336 244C344 264 355 268 366 261C379 268 390 257 393 243C397 225 380 214 368 225Z" fill="#bba0d8"/>
-            <path d="M367 224Q364 211 374 205" stroke="#514064" stroke-width="4" stroke-linecap="round"/>
-            <path d="M383 61V81M373 71H393" stroke="#bba0d8" stroke-width="3"/>
-            <circle cx="45" cy="151" r="5" fill="#bba0d8"/>
+            <path d="M95 62V45M95 45L87 37M95 45L103 37" stroke="var(--purple)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M368 225C354 207 326 221 336 244C344 264 355 268 366 261C379 268 390 257 393 243C397 225 380 214 368 225Z" fill="var(--purple)"/>
+            <path d="M367 224Q364 211 374 205" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+            <path d="M383 61V81M373 71H393" stroke="var(--purple)" stroke-width="3"/>
+            <circle cx="45" cy="151" r="5" fill="var(--purple)"/>
           </svg>
           <span class="art-label">змейка обыкновенная<br><i>serpens procrastinatus</i></span>
         </div>

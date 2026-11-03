@@ -10,7 +10,7 @@
 
   const buttons = [...filters.querySelectorAll("[data-topic]")];
   const articles = [...document.querySelectorAll("[data-article-topic]")];
-  const titles = { all: "Все материалы", city: "Город", culture: "Культура", science: "Наука" };
+  const titles = { all: "Все материалы", culture: "Культура", science: "Наука" };
   const count = document.querySelector("#news-count");
   const heading = document.querySelector("#feed-title");
   const empty = document.querySelector("#news-empty");
