@@ -13,6 +13,7 @@
   const titles = { all: "Все материалы", city: "Город", culture: "Культура", science: "Наука" };
   const count = document.querySelector("#news-count");
   const heading = document.querySelector("#feed-title");
+  const empty = document.querySelector("#news-empty");
 
   function applyTopic(topic, updateUrl) {
     if (!Object.hasOwn(titles, topic)) topic = "all";
@@ -24,6 +25,7 @@
     buttons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.topic === topic)));
     heading.textContent = titles[topic];
     count.textContent = `Материалов: ${visible}`;
+    empty.hidden = visible > 0;
 
     if (updateUrl) {
       const url = new URL(location.href);

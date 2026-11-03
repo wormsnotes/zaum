@@ -16,6 +16,15 @@
   const SIZE = 24;
   const CELL = canvas.width / SIZE;
   const STORAGE_KEY = "zaum-snake-best";
+  const theme = getComputedStyle(document.documentElement);
+  const colors = {
+    field: theme.getPropertyValue("--green").trim(),
+    grid: "#8c69a814",
+    fruit: theme.getPropertyValue("--purple").trim(),
+    head: theme.getPropertyValue("--snake").trim(),
+    body: theme.getPropertyValue("--snake-body").trim(),
+    eyes: theme.getPropertyValue("--paper").trim()
+  };
   const directions = {
     up: { x: 0, y: -1 }, down: { x: 0, y: 1 },
     left: { x: -1, y: 0 }, right: { x: 1, y: 0 }
@@ -63,9 +72,9 @@
   }
 
   function draw() {
-    context.fillStyle = "#ddf672";
+    context.fillStyle = colors.field;
     context.fillRect(0, 0, canvas.width, canvas.height);
-    context.strokeStyle = "#2724240d";
+    context.strokeStyle = colors.grid;
     context.lineWidth = 1;
     context.beginPath();
     for (let i = 1; i < SIZE; i++) {
@@ -76,23 +85,23 @@
     if (food) {
       const x = (food.x + .5) * CELL;
       const y = (food.y + .55) * CELL;
-      context.fillStyle = "#7a58bd";
+      context.fillStyle = colors.fruit;
       context.beginPath();
       context.ellipse(x, y, CELL * .36, CELL * .34, 0, 0, Math.PI * 2);
       context.fill();
-      context.strokeStyle = "#272424";
+      context.strokeStyle = colors.head;
       context.lineWidth = 2;
       context.beginPath(); context.moveTo(x, y - 6); context.lineTo(x + 3, y - 11); context.stroke();
     }
     snake.forEach((part, i) => {
-      context.fillStyle = i === 0 ? "#272424" : "#3e4930";
+      context.fillStyle = i === 0 ? colors.head : colors.body;
       context.fillRect(part.x * CELL + 1, part.y * CELL + 1, CELL - 2, CELL - 2);
     });
     const head = snake[0];
     if (!head) return;
     const centerX = (head.x + .5) * CELL + direction.x * 5;
     const centerY = (head.y + .5) * CELL + direction.y * 5;
-    context.fillStyle = "#f3f0e7";
+    context.fillStyle = colors.eyes;
     for (const side of [-1, 1]) {
       context.beginPath();
       context.arc(centerX + direction.y * side * 5, centerY + direction.x * side * 5, 2.5, 0, Math.PI * 2);
