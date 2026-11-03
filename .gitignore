@@ -5,3 +5,6 @@ Desktop.ini
 .idea/
 *.log
 .preview/
+_site/
+__pycache__/
+*.pyc

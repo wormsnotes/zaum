@@ -1,0 +1,80 @@
+name: Publish website
+run-name: Publish ${{ inputs.version || 'main' }}
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Версия: previous для отката, main для последней версии, тег или SHA"
+        required: true
+        default: previous
+        type: string
+
+permissions:
+  contents: read
+  pages: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      source_sha: ${{ steps.prepare.outputs.source_sha }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check versioning tools
+        run: python3 -m unittest discover -s tests -v
+      - name: Prepare selected website version
+        id: prepare
+        env:
+          SOURCE_REF: ${{ inputs.version || github.sha }}
+          VERSION_TAG: site-${{ github.run_number }}
+          DEPLOYMENT_ID: ${{ github.run_id }}.${{ github.run_attempt }}
+        run: >-
+          python3 scripts/prepare_site.py --ref "$SOURCE_REF"
+          --version "$VERSION_TAG" --deployment-id "$DEPLOYMENT_ID" --output _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Record successfully published version
+        env:
+          SOURCE_SHA: ${{ needs.build.outputs.source_sha }}
+          VERSION_TAG: site-${{ github.run_number }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git show-ref --verify --quiet "refs/tags/$VERSION_TAG"; then
+            test "$(git rev-parse "$VERSION_TAG^{commit}")" = "$SOURCE_SHA"
+          else
+            git tag -a "$VERSION_TAG" "$SOURCE_SHA" -m "Published website version $VERSION_TAG"
+            git push origin "refs/tags/$VERSION_TAG"
+          fi
+          printf 'Published version: `%s`\n\nSource: `%s`\n' "$VERSION_TAG" "$SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
